@@ -1,7 +1,11 @@
 export interface UserSettings {
   name: string;
-  emailOffers: boolean;
-  interfaceStyle: string;
-  subscriptionType: string;
-  notes: string;
+  quantity: number;
+  price: number;
+  sku: string;
+  image: string;
+  available: boolean;
+  token: string;
+  description: string;
+  category: string;
 }

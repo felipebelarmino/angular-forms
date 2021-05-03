@@ -12,21 +12,25 @@ import { UserSettings } from '../data/interface-user-settings';
 export class UserSettingsFormComponent implements OnInit {
   originalUserSettings: UserSettings = {
     name: '',
-    emailOffers: false,
-    interfaceStyle: '',
-    subscriptionType: '',
-    notes: '',
+    description: '',
+    quantity: 0,
+    price: 0.00,
+    sku: '',
+    image: '',
+    available: true,
+    token: 'Não implementado ainda!',
+    category: '',
   };
 
   userSettings: UserSettings = { ...this.originalUserSettings };
   postError: boolean;
   postErrorMessage: string;
-  subscriptionTypes: Observable<string[]>;
+  categorys: Observable<string[]>;
 
   constructor(private dataService: DataService) {}
 
   ngOnInit(): void {
-    this.subscriptionTypes = this.dataService.getSubscriptionTypes();
+    this.categorys = this.dataService.getCategories();
   }
 
   onSubmit(form: NgForm) {
@@ -41,7 +45,7 @@ export class UserSettingsFormComponent implements OnInit {
       );
     } else {
       this.postError = true;
-      this.postErrorMessage = 'Please fix the above errors!';
+      this.postErrorMessage = 'Por favor, preencha corretamente os campos em vermelho!';
     }
   }
 

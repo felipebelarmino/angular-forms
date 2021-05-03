@@ -9,8 +9,8 @@ import { UserSettings } from './interface-user-settings';
 export class DataService {
   constructor(private http: HttpClient) {}
 
-  getSubscriptionTypes(): Observable<string[]> {
-    return of(['Monthly', 'Annual', 'Lifetime']);
+  getCategories(): Observable<string[]> {
+    return of(['Smartphones', 'Computadores', 'Notebooks', 'Acessórios', 'Audio', 'Monitores']);
   }
 
   postUserSettingsForm(userSettings: UserSettings): Observable<any> {
