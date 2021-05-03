@@ -1,0 +1,17 @@
+{
+  "hosting": [
+    {
+      "app": {
+        "project": "ps-demo",
+        "target": "build",
+        "configuration": "production",
+        "path": "dist/ps-demo"
+      },
+      "azureHosting": {
+        "subscription": "70d9d516-a3d8-4697-8262-5fbfb28d7f9c",
+        "resourceGroupName": "ps-demo-static-deploy",
+        "account": "psdemostatic"
+      }
+    }
+  ]
+}
